@@ -8,7 +8,19 @@ import Collapse from 'material-ui/transitions/Collapse';
 import Avatar from 'material-ui/Avatar';
 import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
+import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
+import InboxIcon from 'material-ui-icons/Inbox';
+import DraftsIcon from 'material-ui-icons/Drafts';
+import StarIcon from 'material-ui-icons/Star';
+import SendIcon from 'material-ui-icons/Send';
+import MailIcon from 'material-ui-icons/Mail';
+import DeleteIcon from 'material-ui-icons/Delete';
+import ReportIcon from 'material-ui-icons/Report';
+import Divider from 'material-ui/Divider';
+import Drawer from 'material-ui/Drawer';
+
 import red from 'material-ui/colors/red';
+import brown from 'material-ui/colors/brown';
 import FavoriteIcon from 'material-ui-icons/Favorite';
 import ShareIcon from 'material-ui-icons/Share';
 import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
@@ -16,7 +28,12 @@ import Toolbar from 'material-ui/Toolbar';
 import Button from 'material-ui/Button';
 import MenuIcon from 'material-ui-icons/Menu';
 
+
 const styles = theme => ({
+    appBar: {
+        height: 60,
+    },
+
     card: {
         maxWidth: 400,
     },
@@ -42,33 +59,140 @@ const styles = theme => ({
     root: {
         marginTop: 0,
         width: '100%',
-        backgroundColor:'red',
-
+        backgroundColor:'#00bfa5',
     },
     flex: {
         flex: 1,
+        color: '#FAFAFA'
+    },
+    list: {
+        width: 250,
+        flex: 'initial',
+    },
+    listFull: {
+        width: 'auto',
+        flex: 'initial',
     },
 });
 
 class RecipeReviewCard extends Component {
-    state = { expanded: false };
+    state = {
+        open: {
+            top: false,
+            left: false,
+            bottom: false,
+            right: false,
+        },
+        expanded: false
+    };
+    toggleDrawer = (side, open) => {
+        const drawerState = {};
+        drawerState[side] = open;
+        this.setState({ open: drawerState });
+    };
+    
 
     handleExpandClick = () => {
         this.setState({ expanded: !this.state.expanded });
     };
 
+    handleLeftOpen = () => this.toggleDrawer('left', true);
+    handleLeftClose = () => this.toggleDrawer('left', false);
+
     render() {
         const classes = this.props.classes;
+
+        const mailFolderListItems = (
+            <div>
+                <ListItem button>
+                    <ListItemIcon>
+                        <InboxIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Inbox" />
+                </ListItem>
+                <ListItem button>
+                    <ListItemIcon>
+                        <StarIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Starred" />
+                </ListItem>
+                <ListItem button>
+                    <ListItemIcon>
+                        <SendIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Send mail" />
+                </ListItem>
+                <ListItem button>
+                    <ListItemIcon>
+                        <DraftsIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Drafts" />
+                </ListItem>
+            </div>
+        );
+
+        const otherMailFolderListItems = (
+            <div>
+                <ListItem button>
+                    <ListItemIcon>
+                        <MailIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="All mail" />
+                </ListItem>
+                <ListItem button>
+                    <ListItemIcon>
+                        <DeleteIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Trash" />
+                </ListItem>
+                <ListItem button>
+                    <ListItemIcon>
+                        <ReportIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Spam" />
+                </ListItem>
+            </div>
+        );
+
+        const sideList = (
+            <div>
+                <List className={classes.list} disablePadding>
+                    {mailFolderListItems}
+                </List>
+                <Divider />
+                <List className={classes.list} disablePadding>
+                    {otherMailFolderListItems}
+                </List>
+            </div>
+        );
+
+        const fullList = (
+            <div>
+                <List className={classes.listFull} disablePadding>
+                    {mailFolderListItems}
+                </List>
+                <Divider />
+                <List className={classes.listFull} disablePadding>
+                    {otherMailFolderListItems}
+                </List>
+            </div>
+        );
 
         return (
             <div>
                 <div className={classes.root}>
                         <Toolbar>
-                            <IconButton color="contrast" aria-label="Menu">
+                            <IconButton color="contrast" aria-label="Menu"  onClick={this.handleLeftOpen}>
                                 <MenuIcon />
                             </IconButton>
-                            <Typography type="title" color="white" className={classes.flex}>
-                                Headquarters Hair & Appereal
+                            <Drawer
+                                open={this.state.open.left}
+                                onRequestClose={this.handleLeftClose}
+                                onClick={this.handleLeftClose}>
+                                {sideList}
+                            </Drawer>
+                            <Typography type="title" className={classes.flex}>
+                                Headquarters Hair & Apparel
                             </Typography>
                             <Button color="contrast">Login</Button>
                         </Toolbar>
