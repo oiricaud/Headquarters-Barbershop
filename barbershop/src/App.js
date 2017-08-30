@@ -7,19 +7,24 @@ import Card, { CardHeader, CardMedia, CardContent, CardActions } from 'material-
 import Collapse from 'material-ui/transitions/Collapse';
 import Avatar from 'material-ui/Avatar';
 import IconButton from 'material-ui/IconButton';
+import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
-import InboxIcon from 'material-ui-icons/Inbox';
-import DraftsIcon from 'material-ui-icons/Drafts';
+import BusinessIcon from 'material-ui-icons/Business';
+import PhoneIcon from 'material-ui-icons/Phone';
+import DirectionsIcon from 'material-ui-icons/Directions';
+import DateRangeIcon from 'material-ui-icons/DateRange';
 import StarIcon from 'material-ui-icons/Star';
 import SendIcon from 'material-ui-icons/Send';
 import MailIcon from 'material-ui-icons/Mail';
 import DeleteIcon from 'material-ui-icons/Delete';
+import ComputerIcon from 'material-ui-icons/Computer';
 import ReportIcon from 'material-ui-icons/Report';
 import Divider from 'material-ui/Divider';
 import Drawer from 'material-ui/Drawer';
 
 import red from 'material-ui/colors/red';
+import blueGrey from 'material-ui/colors/blueGrey';
 import brown from 'material-ui/colors/brown';
 import FavoriteIcon from 'material-ui-icons/Favorite';
 import ShareIcon from 'material-ui-icons/Share';
@@ -33,7 +38,14 @@ const styles = theme => ({
     appBar: {
         height: 60,
     },
-
+    paper: theme.mixins.gutters({
+        paddingTop: 16,
+        paddingBottom: 16,
+        marginTop: theme.spacing.unit * 3,
+        marginBottom: theme.spacing.unit * 3,
+        marginLeft: theme.spacing.unit * 3,
+        marginRight: theme.spacing.unit * 3,
+    }),
     card: {
         maxWidth: 400,
     },
@@ -59,7 +71,7 @@ const styles = theme => ({
     root: {
         marginTop: 0,
         width: '100%',
-        backgroundColor:'#00bfa5',
+        backgroundColor:'#F44336',
     },
     flex: {
         flex: 1,
@@ -73,6 +85,9 @@ const styles = theme => ({
         width: 'auto',
         flex: 'initial',
     },
+    boo: {
+        backgroundColor: 'blueGrey'
+    }
 });
 
 class RecipeReviewCard extends Component {
@@ -90,7 +105,7 @@ class RecipeReviewCard extends Component {
         drawerState[side] = open;
         this.setState({ open: drawerState });
     };
-    
+
 
     handleExpandClick = () => {
         this.setState({ expanded: !this.state.expanded });
@@ -104,17 +119,38 @@ class RecipeReviewCard extends Component {
 
         const mailFolderListItems = (
             <div>
+                <Card className={classes.card}>
+                    <CardMedia
+                        className={classes.media}
+                        image="https://www.9to5animations.com/wp-content/uploads/2016/12/Nature-sunset-hd-wallpaper.jpg"
+                        title="Contemplative Reptile"
+                    />
+                    <CardContent>
+                        <Typography type="headline" component="h3" className="{classes.toolbarheader}">
+                            Look your best
+                        </Typography>
+                        <Typography component="p">
+                            145 Mesa Hills El Paso, TX 79902
+                        </Typography>
+                    </CardContent>
+                </Card>
                 <ListItem button>
                     <ListItemIcon>
-                        <InboxIcon />
+                        <BusinessIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Inbox" />
+                    <ListItemText primary="Hours" />
+                </ListItem>
+                <ListItem button>
+                    <ListItemIcon>
+                        <PhoneIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Call" />
                 </ListItem>
                 <ListItem button>
                     <ListItemIcon>
                         <StarIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Starred" />
+                    <ListItemText primary="Reviews" />
                 </ListItem>
                 <ListItem button>
                     <ListItemIcon>
@@ -124,9 +160,9 @@ class RecipeReviewCard extends Component {
                 </ListItem>
                 <ListItem button>
                     <ListItemIcon>
-                        <DraftsIcon />
+                        <DirectionsIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Drafts" />
+                    <ListItemText primary="Directions" />
                 </ListItem>
             </div>
         );
@@ -135,21 +171,15 @@ class RecipeReviewCard extends Component {
             <div>
                 <ListItem button>
                     <ListItemIcon>
-                        <MailIcon />
+                        <DateRangeIcon />
                     </ListItemIcon>
-                    <ListItemText primary="All mail" />
+                    <ListItemText primary="Appointments" />
                 </ListItem>
                 <ListItem button>
                     <ListItemIcon>
-                        <DeleteIcon />
+                        <ComputerIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Trash" />
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon>
-                        <ReportIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Spam" />
+                    <ListItemText primary="Careers" />
                 </ListItem>
             </div>
         );
@@ -179,7 +209,7 @@ class RecipeReviewCard extends Component {
         );
 
         return (
-            <div>
+            <div className={classes.boo}>
                 <div className={classes.root}>
                         <Toolbar>
                             <IconButton color="contrast" aria-label="Menu"  onClick={this.handleLeftOpen}>
@@ -198,76 +228,19 @@ class RecipeReviewCard extends Component {
                         </Toolbar>
                 </div>
                 <div>
-                    <Card className={classes.card}>
-                        <CardHeader
-                            avatar={
-                                <Avatar aria-label="Recipe" className={classes.avatar}>
-                                    R
-                                </Avatar>
-                            }
-                            title="Shrimp and Chorizo Paella"
-                            subheader="September 14, 2016"
-                        />
-                        <CardMedia
-                            className={classes.media}
-                            image="https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.kellyjbaker.com%2Fwp-content%2Fuploads%2F2015%2F07%2Fo-COFFEE-TEA-TASTE-facebook.jpg&f=1"
-                            title="Contemplative Reptile"
-                        />
-                        <CardContent>
-                            <Typography component="p">
-                                This impressive paella is a perfect party dish and a fun meal to cook together with
-                                your guests. Add 1 cup of frozen peas along with the mussels, if you like.
-                            </Typography>
-                        </CardContent>
-                        <CardActions disableActionSpacing>
-                            <IconButton aria-label="Add to favorites">
-                                <FavoriteIcon />
-                            </IconButton>
-                            <IconButton aria-label="Share">
-                                <ShareIcon />
-                            </IconButton>
-                            <div className={classes.flexGrow} />
-                            <IconButton
-                                className={classnames(classes.expand, {
-                                    [classes.expandOpen]: this.state.expanded,
-                                })}
-                                onClick={this.handleExpandClick}
-                                aria-expanded={this.state.expanded}
-                                aria-label="Show more"
-                            >
-                                <ExpandMoreIcon />
-                            </IconButton>
-                        </CardActions>
-                        <Collapse in={this.state.expanded} transitionDuration="auto" unmountOnExit>
-                            <CardContent>
-                                <Typography paragraph type="body2">
-                                    Method:
-                                </Typography>
-                                <Typography paragraph>
-                                    Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
-                                    minutes.
-                                </Typography>
-                                <Typography paragraph>
-                                    Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
-                                    heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
-                                    browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving
-                                    chicken and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion,
-                                    salt and pepper, and cook, stirring often until thickened and fragrant, about 10
-                                    minutes. Add saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
-                                </Typography>
-                                <Typography paragraph>
-                                    Add rice and stir very gently to distribute. Top with artichokes and peppers, and
-                                    cook without stirring, until most of the liquid is absorbed, 15 to 18 minutes.
-                                    Reduce heat to medium-low, add reserved shrimp and mussels, tucking them down into
-                                    the rice, and cook again without stirring, until mussels have opened and rice is
-                                    just tender, 5 to 7 minutes more. (Discard any mussels that don’t open.)
-                                </Typography>
-                                <Typography>
-                                    Set aside off of the heat to let rest for 10 minutes, and then serve.
-                                </Typography>
-                            </CardContent>
-                        </Collapse>
-                    </Card>
+                    <Paper className={classes.paper} elevation={4}>
+                        <Typography type="headline" component="h3">
+                            Look your best
+                        </Typography>
+                        <Typography type="body1" component="p">
+                            Book an appointment with confidence in knowing
+                            that we are all trained and certified in the hair industry.
+                        </Typography>
+                    </Paper>
+                </div>
+                <div>
+
+
                 </div>
             </div>
         );
