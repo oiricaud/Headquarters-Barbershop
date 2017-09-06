@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import 'typeface-roboto'
+
 import { withStyles } from 'material-ui/styles';
 import Card, { CardHeader, CardMedia, CardContent, CardActions } from 'material-ui/Card';
 import IconButton from 'material-ui/IconButton';
@@ -19,10 +21,8 @@ import Drawer from 'material-ui/Drawer';
 import red from 'material-ui/colors/red';
 import blueGrey from 'material-ui/colors/blueGrey';
 import Toolbar from 'material-ui/Toolbar';
-import Button from 'material-ui/Button';
 import MenuIcon from 'material-ui-icons/Menu';
 import MyTiles from './comp/tiles.jsx';
-
 
 const styles = theme => ({
     appBar: {
@@ -61,7 +61,7 @@ const styles = theme => ({
     root: {
         marginTop: 0,
         width: '100%',
-        backgroundColor:'#5c6bc0',
+        backgroundColor:'#24292e',
     },
     flex: {
         flex: 1,
@@ -75,9 +75,6 @@ const styles = theme => ({
         width: 'auto',
         flex: 'initial',
     },
-    boo: {
-        backgroundColor: 'blueGrey'
-    }
 });
 
 class RecipeReviewCard extends Component {
@@ -194,7 +191,7 @@ class RecipeReviewCard extends Component {
         );
 
         return (
-            <div className={classes.boo}>
+            <div>
                 <div className={classes.root}>
                     <Toolbar>
                         <IconButton color="contrast" aria-label="Menu"  onClick={this.handleLeftOpen}>
@@ -209,7 +206,6 @@ class RecipeReviewCard extends Component {
                         <Typography type="title" className={classes.flex}>
                             Headquarters
                         </Typography>
-                        <Button color="contrast">Login</Button>
                     </Toolbar>
                 </div>
                 <div>
@@ -229,9 +225,11 @@ class RecipeReviewCard extends Component {
                             voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
                             non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </Typography>
-                        <MyTiles >
+                        <div>
+                            <MyTiles>
 
-                        </MyTiles>
+                            </MyTiles>
+                        </div>
                     </Paper>
 
                 </div>

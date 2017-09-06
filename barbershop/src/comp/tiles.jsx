@@ -15,8 +15,8 @@ const styles = theme => ({
     },
     gridList: {
         paddingTop: 50,
-        width: 500,
-        height: 450,
+        width: 1000,
+        height: 650,
     },
     subheader: {
         width: '100%',
@@ -26,46 +26,50 @@ const styles = theme => ({
 
 const tileData = [
     {
-        img: "http://pophaircuts.com/images/2015/06/Lob-Haircut-Ideas-for-Girls-and-Women.jpg",
-        title: 'Image',
-        author: 'author',
-        cols: 0,
-    },
-    {
-        img: "http://ideastand.com/wp-content/uploads/2016/01/short-haircuts-for-round-faces/22-short-haircuts-for-round-faces.jpg",
+        img: process.env.PUBLIC_URL + './haircuts/haircut1.jpg',
         title: 'Image',
         author: 'author',
         cols: 1,
     },
     {
-        img: "http://gvenny.com/images5/0316/best-haircuts-for-2016/best-haircuts-for-2016-90_2.jpg",
+        img: process.env.PUBLIC_URL + './haircuts/haircut2.jpg',
         title: 'Image',
         author: 'author',
         cols: 2,
     },
     {
-        img: "http://www.mens-hairstyle.com/wp-content/uploads/2017/07/19.Fade-Haircuts-for-Black-Men.jpg",
+        img: process.env.PUBLIC_URL + './haircuts/haircut3.jpg',
         title: 'Image',
         author: 'author',
-        cols: 3,
+        cols: 1,
     },
     {
-        img: "https://i0.wp.com/therighthairstyles.com/wp-content/uploads/2013/12/2-red-layered-haircut-for-mediumlength-hair.jpg?w=500",
+        img: process.env.PUBLIC_URL + './haircuts/haircut4.jpg',
         title: 'Image',
         author: 'author',
         cols: 2,
-        rows: 1,
     },
-
+    {
+        img: process.env.PUBLIC_URL + './haircuts/haircut5.jpg',
+        title: 'Image',
+        author: 'author',
+        cols: 1,
+    },
+    {
+        img: process.env.PUBLIC_URL + './haircuts/haircut6.jpg',
+        title: 'Image',
+        author: 'author',
+        cols: 2,
+    },
 ];
 function ImageGridList(props) {
     const classes = props.classes;
 
     return (
         <div className={classes.root}>
-            <GridList cellHeight={160} className={classes.gridList} cols={3}>
+            <GridList cellHeight={400} className={classes.gridList} cols={3}>
                 {tileData.map(tile => (
-                    <GridListTile key={tile.img} cols={tile.cols || 1 || 2 || 3 }>
+                    <GridListTile key={tile.img} cols={tile.cols || 1}>
                         <img src={tile.img} alt={tile.title} />
                     </GridListTile>
                 ))}
