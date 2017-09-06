@@ -21,8 +21,8 @@ import blueGrey from 'material-ui/colors/blueGrey';
 import Toolbar from 'material-ui/Toolbar';
 import Button from 'material-ui/Button';
 import MenuIcon from 'material-ui-icons/Menu';
+import MyTiles from './comp/tiles.jsx';
 
-import titleData from './tileData';
 
 const styles = theme => ({
     appBar: {
@@ -196,21 +196,21 @@ class RecipeReviewCard extends Component {
         return (
             <div className={classes.boo}>
                 <div className={classes.root}>
-                        <Toolbar>
-                            <IconButton color="contrast" aria-label="Menu"  onClick={this.handleLeftOpen}>
-                                <MenuIcon />
-                            </IconButton>
-                            <Drawer
-                                open={this.state.open.left}
-                                onRequestClose={this.handleLeftClose}
-                                onClick={this.handleLeftClose}>
-                                {sideList}
-                            </Drawer>
-                            <Typography type="title" className={classes.flex}>
-                                Headquarters
-                            </Typography>
-                            <Button color="contrast">Login</Button>
-                        </Toolbar>
+                    <Toolbar>
+                        <IconButton color="contrast" aria-label="Menu"  onClick={this.handleLeftOpen}>
+                            <MenuIcon />
+                        </IconButton>
+                        <Drawer
+                            open={this.state.open.left}
+                            onRequestClose={this.handleLeftClose}
+                            onClick={this.handleLeftClose}>
+                            {sideList}
+                        </Drawer>
+                        <Typography type="title" className={classes.flex}>
+                            Headquarters
+                        </Typography>
+                        <Button color="contrast">Login</Button>
+                    </Toolbar>
                 </div>
                 <div>
                     <Paper className={classes.paper} elevation={10}>
@@ -229,12 +229,16 @@ class RecipeReviewCard extends Component {
                             voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
                             non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </Typography>
+                        <MyTiles >
+
+                        </MyTiles>
                     </Paper>
+
                 </div>
                 <div>
                 </div>
             </div>
-            
+
         );
     }
 }
