@@ -16,13 +16,12 @@ const styles = theme => ({
     gridList: {
         paddingTop: 50,
         width: 1500,
-        height: 650,
+        height: '100%',
     },
     subheader: {
         width: '100%',
     },
 });
-
 
 const tileData = [
     {

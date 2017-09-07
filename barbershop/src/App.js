@@ -111,14 +111,9 @@ class RecipeReviewCard extends Component {
                 <Card className={classes.card}>
                     <CardMedia
                         className={classes.media}
-                        image={process.env.PUBLIC_URL + '/haircut.jpg'}
+                        image={process.env.PUBLIC_URL + '/stars.jpg'}
                         title="Contemplative Reptile"
                     />
-                    <CardContent>
-                        <Typography type="headline" component="h2">
-                            145 Mesa Hills El Paso, TX 79902
-                        </Typography>
-                    </CardContent>
                 </Card>
                 <ListItem button>
                     <ListItemIcon>

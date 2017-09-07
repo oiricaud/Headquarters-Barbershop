@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import 'typeface-roboto'
 import { withStyles } from 'material-ui/styles';
 import { GridList, GridListTile } from 'material-ui/GridList';
 
@@ -13,7 +14,7 @@ const styles = theme => ({
         overflow: 'hidden',
         backgroundColor:'#24292e',
         color:'#fff',
-
+        textAlign: 'center',
     },
 });
 
