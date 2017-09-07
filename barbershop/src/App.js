@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import 'typeface-roboto'
-
 import { withStyles } from 'material-ui/styles';
 import Card, { CardHeader, CardMedia, CardContent, CardActions } from 'material-ui/Card';
 import IconButton from 'material-ui/IconButton';
@@ -19,14 +18,19 @@ import ComputerIcon from 'material-ui-icons/Computer';
 import Divider from 'material-ui/Divider';
 import Drawer from 'material-ui/Drawer';
 import red from 'material-ui/colors/red';
-import blueGrey from 'material-ui/colors/blueGrey';
 import Toolbar from 'material-ui/Toolbar';
 import MenuIcon from 'material-ui-icons/Menu';
 import MyTiles from './comp/tiles.jsx';
+import MyFooter from './comp/footer.jsx';
 
 const styles = theme => ({
+
     appBar: {
         height: 60,
+    },
+    h1:{
+        weight: 10,
+        backgroundColor: '#090'
     },
     paper: theme.mixins.gutters({
         paddingTop: 8,
@@ -204,7 +208,7 @@ class RecipeReviewCard extends Component {
                             {sideList}
                         </Drawer>
                         <Typography type="title" className={classes.flex}>
-                            Headquarters
+                            Home
                         </Typography>
                     </Toolbar>
                 </div>
@@ -212,10 +216,14 @@ class RecipeReviewCard extends Component {
                     <Paper className={classes.paper} elevation={10}>
                         <CardMedia
                             className={classes.media}
-                            image={process.env.PUBLIC_URL + '/eclipse.jpg'}
+                            image={process.env.PUBLIC_URL + '/elpasodowntown.jpg'}
                             title="Contemplative Reptile"
                         />
-                        <Typography type="headline" component="h3">
+                        <div className="headliner">
+                            <h1>   Headquarters Hair & Apparel </h1>
+                        </div>
+                        <h4>   145 S. Mesa Hills </h4>
+                        <Typography component="h3">
                             Look your best
                         </Typography>
                         <Typography type="body2" component="p">
@@ -227,13 +235,13 @@ class RecipeReviewCard extends Component {
                         </Typography>
                         <div>
                             <MyTiles>
-
                             </MyTiles>
                         </div>
                     </Paper>
-
                 </div>
                 <div>
+                    <MyFooter>
+                    </MyFooter>
                 </div>
             </div>
 

@@ -15,7 +15,7 @@ const styles = theme => ({
     },
     gridList: {
         paddingTop: 50,
-        width: 1000,
+        width: 1500,
         height: 650,
     },
     subheader: {
@@ -67,7 +67,7 @@ function ImageGridList(props) {
 
     return (
         <div className={classes.root}>
-            <GridList cellHeight={400} className={classes.gridList} cols={3}>
+            <GridList cellHeight={600} className={classes.gridList} cols={3}>
                 {tileData.map(tile => (
                     <GridListTile key={tile.img} cols={tile.cols || 1}>
                         <img src={tile.img} alt={tile.title} />
