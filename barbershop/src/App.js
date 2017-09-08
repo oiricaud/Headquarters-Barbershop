@@ -20,8 +20,8 @@ import Drawer from 'material-ui/Drawer';
 import red from 'material-ui/colors/red';
 import Toolbar from 'material-ui/Toolbar';
 import MenuIcon from 'material-ui-icons/Menu';
-import MyTiles from './comp/tiles.jsx';
-import MyFooter from './comp/footer.jsx';
+import MyTiles from './components/tiles.jsx';
+import MyFooter from './components/footer.jsx';
 
 const styles = theme => ({
 
@@ -111,7 +111,7 @@ class RecipeReviewCard extends Component {
                 <Card className={classes.card}>
                     <CardMedia
                         className={classes.media}
-                        image={process.env.PUBLIC_URL + '/stars.jpg'}
+                        image={process.env.PUBLIC_URL + 'banner/stars.jpg'}
                         title="Contemplative Reptile"
                     />
                 </Card>
@@ -211,7 +211,7 @@ class RecipeReviewCard extends Component {
                     <Paper className={classes.paper} elevation={10}>
                         <CardMedia
                             className={classes.media}
-                            image={process.env.PUBLIC_URL + '/mountains.jpg'}
+                            image={process.env.PUBLIC_URL + 'banner/mountains.jpg'}
                             title="Contemplative Reptile"
                         />
                         <div className="headliner">
