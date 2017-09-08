@@ -211,22 +211,19 @@ class RecipeReviewCard extends Component {
                     <Paper className={classes.paper} elevation={10}>
                         <CardMedia
                             className={classes.media}
-                            image={process.env.PUBLIC_URL + '/elpasodowntown.jpg'}
+                            image={process.env.PUBLIC_URL + '/mountains.jpg'}
                             title="Contemplative Reptile"
                         />
                         <div className="headliner">
                             <h1>   Headquarters Hair & Apparel </h1>
                         </div>
                         <h4>   145 S. Mesa Hills </h4>
-                        <Typography component="h3">
-                            Look your best
-                        </Typography>
                         <Typography type="body2" component="p">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            Look your best! Headquarters Hair & Apperal is a family owned business in El Paso TX. We are
+                            located in the west side of town and are always making our customers happy. We have been opened
+                            for about 5 years and have had many of our clients from milatary base. We are constantly getting
+                            great reviews. We are not limited to only haircuts for adults, children or our seniors but we also
+                            offer great massage and offer hair coloring at your pleasure.
                         </Typography>
                         <div>
                             <MyTiles>

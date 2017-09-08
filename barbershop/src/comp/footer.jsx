@@ -23,7 +23,7 @@ function Footer(props) {
 
     return (
         <div className={classes.root}>
-           Headquarters Hair & Apperal 145. S. Mesa Hills El Paso TX 79902
+            <h5>  Headquarters Hair & Apperal 145. S. Mesa Hills El Paso TX 79902 </h5>
         </div>
     );
 }
