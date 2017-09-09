@@ -82,7 +82,7 @@ const styles = theme => ({
     },
 });
 
-class RecipeReviewCard extends Component {
+class App extends Component {
     state = {
         open: {
             top: false,
@@ -250,8 +250,8 @@ class RecipeReviewCard extends Component {
     }
 }
 
-RecipeReviewCard.propTypes = {
+App.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(RecipeReviewCard);
+export default withStyles(styles)(App);
