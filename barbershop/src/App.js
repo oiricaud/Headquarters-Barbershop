@@ -1,7 +1,8 @@
 
 import React, { Component } from 'react';
+import './App.css'
 import PropTypes from 'prop-types';
-import {BrowserRouter, Route, Link } from 'react-router-dom'
+import {BrowserRouter, Route, NavLink } from 'react-router-dom'
 import 'typeface-roboto'
 import { withStyles } from 'material-ui/styles';
 import Card, { CardHeader, CardMedia, CardContent, CardActions } from 'material-ui/Card';
@@ -25,7 +26,6 @@ import MyTiles from './components/tiles.jsx';
 import MyFooter from './components/footer.jsx';
 
 const styles = theme => ({
-
     appBar: {
         height: 60,
     },
@@ -83,6 +83,7 @@ const styles = theme => ({
 });
 
 class App extends Component {
+
     state = {
         open: {
             top: false,
@@ -120,32 +121,31 @@ class App extends Component {
                     <ListItemIcon>
                         <BusinessIcon />
                     </ListItemIcon>
-                    <Link to='hours'>Hours</Link>
-                    <ListItemText primary="Hours" />
+                    <NavLink activeClassName='active' to='hours'>Hours</NavLink>
                 </ListItem>
                 <ListItem button>
                     <ListItemIcon>
                         <PhoneIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Call" />
+                    <NavLink to='call'>Call</NavLink>
                 </ListItem>
                 <ListItem button>
                     <ListItemIcon>
                         <StarIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Reviews" />
+                    <NavLink to='reviews'>Reviews</NavLink>
                 </ListItem>
                 <ListItem button>
                     <ListItemIcon>
                         <SendIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Send mail" />
+                    <NavLink to='mail'>Mail</NavLink>
                 </ListItem>
                 <ListItem button>
                     <ListItemIcon>
                         <DirectionsIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Directions" />
+                    <NavLink to='directions'>Directions</NavLink>
                 </ListItem>
             </div>
         );
@@ -194,12 +194,6 @@ class App extends Component {
         return (
             <BrowserRouter>
             <div>
-                <Route exact path='/' render={() => <h1> Home View </h1>} />
-                <Route
-                    exact
-                    path='/hours'
-                    render={() => <h1> Hours View </h1>}
-                />
                 <div className={classes.root}>
                     <Toolbar>
                         <IconButton color="contrast" aria-label="Menu"  onClick={this.handleLeftOpen}>
@@ -215,6 +209,13 @@ class App extends Component {
                             Home
                         </Typography>
                     </Toolbar>
+
+                    <Route exact path='/' render={() => <h1> Home </h1>} />
+                    <Route
+                        exact
+                        path='/hours'
+                        render={() => <h1> Hours </h1>}
+                    />
                 </div>
                 <div>
                     <Paper className={classes.paper} elevation={10}>
