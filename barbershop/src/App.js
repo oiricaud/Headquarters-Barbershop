@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import {BrowserRouter, Route, Link } from 'react-router-dom'
 import 'typeface-roboto'
 import { withStyles } from 'material-ui/styles';
 import Card, { CardHeader, CardMedia, CardContent, CardActions } from 'material-ui/Card';
@@ -119,6 +120,7 @@ class RecipeReviewCard extends Component {
                     <ListItemIcon>
                         <BusinessIcon />
                     </ListItemIcon>
+                    <Link to='hours'>Hours</Link>
                     <ListItemText primary="Hours" />
                 </ListItem>
                 <ListItem button>
@@ -190,7 +192,14 @@ class RecipeReviewCard extends Component {
         );
 
         return (
+            <BrowserRouter>
             <div>
+                <Route exact path='/' render={() => <h1> Home View </h1>} />
+                <Route
+                    exact
+                    path='/hours'
+                    render={() => <h1> Hours View </h1>}
+                />
                 <div className={classes.root}>
                     <Toolbar>
                         <IconButton color="contrast" aria-label="Menu"  onClick={this.handleLeftOpen}>
@@ -236,7 +245,7 @@ class RecipeReviewCard extends Component {
                     </MyFooter>
                 </div>
             </div>
-
+        </BrowserRouter>
         );
     }
 }
