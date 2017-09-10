@@ -13,6 +13,11 @@ import MyFooter from './components/footer.jsx';
 import MySideBar from './components/sidebar.jsx';
 
 const styles = theme => ({
+    root: {
+        marginTop: 0,
+        width: '100%',
+        backgroundColor:'#fff',
+    },
     appBar: {
         height: 60,
     },
@@ -32,7 +37,6 @@ const styles = theme => ({
         marginLeft: theme.spacing.unit * 3,
         marginRight: theme.spacing.unit * 3,
     }),
-
     expand: {
         transform: 'rotate(0deg)',
         transition: theme.transitions.create('transform', {
@@ -48,11 +52,6 @@ const styles = theme => ({
     flexGrow: {
         flex: '1 1 auto',
     },
-    root: {
-        marginTop: 0,
-        width: '100%',
-        backgroundColor:'#24292e',
-    },
 });
 
 class App extends Component {
@@ -60,35 +59,9 @@ class App extends Component {
         const classes = this.props.classes;
         return (
             <BrowserRouter>
-            <div>
-                <div className={classes.root}>
-
-                    <MySideBar>
-                    </MySideBar>
-
-                    <Route exact path='/' render={() => <h1> </h1>} />
-
-                    <Route
-                        exact
-                        path='/call'
-                        render={() => <h1>  </h1>}
-                    />
-                    <Route
-                        exact
-                        path='/reviews'
-                        render={() => <h1> </h1>}
-                    />
-                    <Route
-                        exact
-                        path='/mail'
-                        render={() => <h1> </h1>}
-                    />
-                    <Route
-                        exact
-                        path='/directions'
-                        render={() => <h1> </h1>}
-                    />
-                </div>
+            <div className={classes.root}>
+                <MySideBar>
+                </MySideBar>
                 <div>
                     <Paper className={classes.paper} elevation={10}>
                         <CardMedia
@@ -113,10 +86,8 @@ class App extends Component {
                         </div>
                     </Paper>
                 </div>
-                <div>
-                    <MyFooter>
-                    </MyFooter>
-                </div>
+                <MyFooter>
+                </MyFooter>
             </div>
         </BrowserRouter>
         );

@@ -22,6 +22,11 @@ import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
 
 const styles = theme => ({
+    root: {
+        marginTop: 0,
+        width: '100%',
+        backgroundColor:'#24292e',
+    },
     card: {
         maxWidth: 400,
     },
@@ -159,26 +164,48 @@ class SideBarItem extends Component {
             </div>
         );
         return (
-            <Toolbar>
-                <IconButton color="contrast" aria-label="Menu"  onClick={this.handleLeftOpen}>
-                    <MenuIcon />
-                </IconButton>
-                    <Drawer
-                        open={this.state.open.left}
-                        onRequestClose={this.handleLeftClose}
-                        onClick={this.handleLeftClose}>
-                        {sideList}
-                        >
-                        <NavLink activeClassName='active' exact to='Hours'>
-                            <MenuItem onTouchTap={this.handleLeftClose}>
-                                dfsd </MenuItem>
-                        </NavLink>
-                    </Drawer>
-                <Typography type="title" className={classes.flex}>
-                    Home
-                </Typography>
-            </Toolbar>
-
+            <div className={classes.root}>
+                <Toolbar>
+                    <IconButton color="contrast" aria-label="Menu"  onClick={this.handleLeftOpen}>
+                        <MenuIcon />
+                    </IconButton>
+                        <Drawer
+                            open={this.state.open.left}
+                            onRequestClose={this.handleLeftClose}
+                            onClick={this.handleLeftClose}>
+                            {sideList}
+                            >
+                            <NavLink activeClassName='active' exact to='Hours'>
+                                <MenuItem onTouchTap={this.handleLeftClose}>
+                                    dfsd </MenuItem>
+                            </NavLink>
+                        </Drawer>
+                    <Typography type="title" className={classes.flex}>
+                        Home
+                    </Typography>
+                </Toolbar>
+                <Route exact path='/' render={() => <h1> </h1>} />
+                <Route
+                    exact
+                    path='/call'
+                    render={() => <h1>  </h1>}
+                />
+                <Route
+                    exact
+                    path='/reviews'
+                    render={() => <h1> </h1>}
+                />
+                <Route
+                    exact
+                    path='/mail'
+                    render={() => <h1> </h1>}
+                />
+                <Route
+                    exact
+                    path='/directions'
+                    render={() => <h1> </h1>}
+                />
+            </div>
         )
     }
 }
