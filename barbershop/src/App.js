@@ -18,7 +18,6 @@ const styles = theme => ({
     appBar: {
         height: 60,
     },
-
 });
 
 class App extends Component {
@@ -29,7 +28,7 @@ class App extends Component {
             <div className={classes.root}>
                 <MySideBar>
                 </MySideBar>
-                <Route exact path='/' render={() => <HomeView>  </HomeView>} />
+                <Route exact path='/' render={() => <HomeView> </HomeView>} />
                 <Route
                     exact
                     path='/hours'
