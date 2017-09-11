@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-
 import PropTypes from 'prop-types';
-import {BrowserRouter, Route } from 'react-router-dom'
 import 'typeface-roboto'
 import { withStyles } from 'material-ui/styles';
 import { CardMedia } from 'material-ui/Card';
@@ -20,7 +18,6 @@ const styles = theme => ({
         marginBottom:20,
         marginTop:7,
     },
-
     paper: theme.mixins.gutters({
         paddingTop: 8,
         paddingBottom: 16,
@@ -29,7 +26,6 @@ const styles = theme => ({
         marginLeft: theme.spacing.unit * 3,
         marginRight: theme.spacing.unit * 3,
     }),
-
     expand: {
         transform: 'rotate(0deg)',
         transition: theme.transitions.create('transform', {
