@@ -174,37 +174,12 @@ class SideBarItem extends Component {
                             onRequestClose={this.handleLeftClose}
                             onClick={this.handleLeftClose}>
                             {sideList}
-                            >
-                            <NavLink activeClassName='active' exact to='Hours'>
-                                <MenuItem onTouchTap={this.handleLeftClose}>
-                                    dfsd </MenuItem>
-                            </NavLink>
                         </Drawer>
                     <Typography type="title" className={classes.flex}>
                         Home
                     </Typography>
                 </Toolbar>
-                <Route exact path='/' render={() => <h1> </h1>} />
-                <Route
-                    exact
-                    path='/call'
-                    render={() => <h1>  </h1>}
-                />
-                <Route
-                    exact
-                    path='/reviews'
-                    render={() => <h1> </h1>}
-                />
-                <Route
-                    exact
-                    path='/mail'
-                    render={() => <h1> </h1>}
-                />
-                <Route
-                    exact
-                    path='/directions'
-                    render={() => <h1> </h1>}
-                />
+
             </div>
         )
     }
