@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css'
 import PropTypes from 'prop-types';
 import {BrowserRouter, Route } from 'react-router-dom'
-import 'typeface-roboto'
 import { withStyles } from 'material-ui/styles';
 import HomeView from './views/home.jsx';
 import HoursView from './views/hours.jsx';
