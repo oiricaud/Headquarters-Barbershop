@@ -48,7 +48,7 @@ class Home extends Component {
                     <CardMedia
                         className={classes.media}
                         image={process.env.PUBLIC_URL + 'banner/mountains.jpg'}
-                        title="Contemplative Reptile"
+                        title="Mountains banner"
                     />
                     <div>
                         <h1>  Headquarters Hair & Apparel </h1>

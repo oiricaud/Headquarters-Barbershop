@@ -10,11 +10,14 @@ const styles = theme => ({
         flexGrow: 1,
         marginTop: 30,
     },
-    paper: {
-        padding: 16,
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
-    },
+    paper: theme.mixins.gutters({
+        paddingTop: 8,
+        paddingBottom: 16,
+        marginTop: theme.spacing.unit * 6,
+        marginBottom: theme.spacing.unit * 6,
+        marginLeft: theme.spacing.unit * 6,
+        marginRight: theme.spacing.unit * 6,
+    }),
     appBar: {
         height: 60,
     },
@@ -23,6 +26,11 @@ const styles = theme => ({
         marginBottom:20,
         marginTop:7,
     },
+    hours:{
+        textAlign: 'center',
+    },
+    container:{
+    }
 });
 
 class Hours extends Component {
@@ -30,59 +38,39 @@ class Hours extends Component {
         const classes = this.props.classes;
         return (
             <div className={classes.root}>
-                <Card className={classes.card}>
+                <Paper className={classes.paper} elevation={10}>
                     <CardMedia
                         className={classes.media}
-                        image="https://unsplash.it/2048/634"
-                        title="Contemplative Reptile"
+                        image={process.env.PUBLIC_URL + 'banner/clock.jpg'}
+                        title="Mountains banner"
                     />
-                    <CardContent>
-                        <Grid container spacing={24}>
-                            <Grid item xs={12} sm={6}>
-                                <Paper className={classes.paper}>Monday</Paper>
+                    <div>
+                        <h1>  Headquarters Hair & Apparel </h1>
+                    </div>
+                    <h4>  Hours </h4>
+                    <div id="hours">
+                            <Grid container spacing={0}>
+                                <Grid item xs={6}>
+                                    <h4> Monday </h4>
+                                    <h4> Tuesday </h4>
+                                    <h4> Wednesday </h4>
+                                    <h4> Thursday </h4>
+                                    <h4> Friday </h4>
+                                    <h4> Saturday </h4>
+                                    <h4> Sunday </h4>
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <h4> 10am - 6pm </h4>
+                                    <h4> 10am - 6pm </h4>
+                                    <h4> 10am - 6pm </h4>
+                                    <h4> 10am - 6pm </h4>
+                                    <h4> 10am - 6pm </h4>
+                                    <h4> 10am - 6pm </h4>
+                                    <h4> 10am - 6pm </h4>
+                                </Grid>
                             </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Paper className={classes.paper}>10am - 6pm </Paper>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Paper className={classes.paper}>Tuesday</Paper>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Paper className={classes.paper}>10am - 6pm</Paper>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Paper className={classes.paper}>Wednesday</Paper>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Paper className={classes.paper}>10am - 6pm</Paper>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Paper className={classes.paper}>Thursday</Paper>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Paper className={classes.paper}>10am - 6pm</Paper>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Paper className={classes.paper}>Friday</Paper>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Paper className={classes.paper}>10am - 6pm</Paper>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Paper className={classes.paper}>Saturday</Paper>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Paper className={classes.paper}>10am - 6pm</Paper>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Paper className={classes.paper}>Sunday</Paper>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Paper className={classes.paper}>Open - Close </Paper>
-                            </Grid>
-                        </Grid>
-                    </CardContent>
-                </Card>
+                    </div>
+                </Paper>
             </div>
         );
     }
