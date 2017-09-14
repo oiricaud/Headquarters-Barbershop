@@ -204,7 +204,7 @@ class SideBarItem extends Component {
                             {sideList}
                         </Drawer>
                     <Typography type="title" className={classes.flex}>
-                        Home
+                        Headquarters Hair Salon
                     </Typography>
                 </Toolbar>
 
