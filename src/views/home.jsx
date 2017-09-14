@@ -5,8 +5,14 @@ import { withStyles } from 'material-ui/styles';
 import { CardMedia } from 'material-ui/Card';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
-import MyTiles from '../components/tiles.jsx';
+import MyLargeTiles from '../components/large-tiles.jsx';
+import MySmallTiles from '../components/small-tiles.jsx';
 
+// using ES modules
+import Media from 'react-media'
+
+// using CommonJS modules
+var MediaReact = require('react-media')
 const styles = theme => ({
     root: {
         marginTop: 0,
@@ -51,7 +57,7 @@ class Home extends Component {
                         title="Mountains banner"
                     />
                     <div>
-                        <h1>  Headquarters Hair & Apparel </h1>
+                        <h1>  Home </h1>
                     </div>
                     <h4>  145 S. Mesa Hills </h4>
                     <Typography type="body1" component="p">
@@ -62,8 +68,20 @@ class Home extends Component {
                         offer great massage and offer hair coloring at your pleasure.
                     </Typography>
                     <div>
-                        <MyTiles>
-                        </MyTiles>
+                        <MediaReact query="(max-width: 599px)">
+                            {matches => matches ? (
+                                <div>
+                                    <MySmallTiles>
+                                    </MySmallTiles>
+                                </div>
+                            ) : (
+                                <div>
+                                    <MyLargeTiles>
+                                    </MyLargeTiles>
+                                </div>
+                            )}
+                        </MediaReact>
+
                     </div>
                 </Paper>
             </div>
