@@ -15,6 +15,7 @@ const styles = theme => ({
         backgroundColor:'#24292e',
         color:'#fff',
         textAlign: 'center',
+
     },
 });
 

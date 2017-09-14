@@ -15,24 +15,41 @@ const styles = theme => ({
         flexGrow: 1,
         marginTop: 30,
     },
-    paper: theme.mixins.gutters({
-        backgroundColor: 'darkslategray',
-        paddingTop: 8,
-        paddingBottom: 16,
-        marginTop: theme.spacing.unit * 8,
-        marginBottom: theme.spacing.unit * 8,
-        marginLeft: theme.spacing.unit * 8,
-        marginRight: theme.spacing.unit * 8,
-    }),
+
     appBar: {
         height: 60,
     },
+
     media: {
         height: 300,
         marginBottom:20,
         marginTop:7,
     },
-    hours:{
+    paperSmall: theme.mixins.gutters({
+        backgroundColor: 'darkslategray',
+        paddingTop: 8,
+        paddingBottom: 16,
+        marginTop: theme.spacing.unit * 2,
+        marginBottom: theme.spacing.unit * 2,
+        marginLeft: theme.spacing.unit * 2,
+        marginRight: theme.spacing.unit * 2,
+    }),
+    hoursSmall:{
+        paddingTop: 8,
+        paddingBottom: 16,
+        margin:10,
+    },
+
+    paperLarge: theme.mixins.gutters({
+        backgroundColor: 'darkslategray',
+        paddingTop: 8,
+        paddingBottom: 16,
+        marginTop: theme.spacing.unit * 10,
+        marginBottom: theme.spacing.unit * 10,
+        marginLeft: theme.spacing.unit * 10,
+        marginRight: theme.spacing.unit * 10,
+    }),
+    hoursLarge:{
         paddingTop: 8,
         paddingBottom: 16,
         marginTop: theme.spacing.unit * 3,
@@ -62,13 +79,7 @@ class Hours extends Component {
                 <MediaReact query="(max-width: 599px)">
                     {matches => matches ? (
                         <div>
-                            <p>The document is less than 600px wide.</p>
-                        </div>
-
-                    ) : (
-                        <div>
-                        <p>The document is at least 600px wide.</p>
-                            <Paper className={classes.paper} elevation={10}>
+                            <Paper className={classes.paperSmall} elevation={10}>
                                 <CardMedia
                                     className={classes.media}
                                     image={process.env.PUBLIC_URL + 'banner/clock.jpg'}
@@ -77,7 +88,43 @@ class Hours extends Component {
                                 <div>
                                     <Typography type="title" className={classes.header}>  Home </Typography>
                                 </div>
-                                <div  className={classes.hours}>
+                                <div  className={classes.hoursSmall}>
+                                    <Grid container spacing={0}>
+                                        <Grid item xs={6}>
+                                            <Typography type="title1" className={classes.flex}> Monday </Typography>
+                                            <Typography type="title1" className={classes.flex}> Tuesday </Typography>
+                                            <Typography type="title1" className={classes.flex}> Wednesday </Typography>
+                                            <Typography type="title1" className={classes.flex}> Thursday </Typography>
+                                            <Typography type="title1" className={classes.flex}> Friday </Typography>
+                                            <Typography type="title1" className={classes.flex}> Saturday </Typography>
+                                            <Typography type="title1" className={classes.flex}> Sunday </Typography>
+                                        </Grid>
+                                        <Grid item xs={6}>
+                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
+                                        </Grid>
+                                    </Grid>
+                                </div>
+                            </Paper>
+                        </div>
+
+                    ) : (
+                        <div>
+                            <Paper className={classes.paperLarge} elevation={10}>
+                                <CardMedia
+                                    className={classes.media}
+                                    image={process.env.PUBLIC_URL + 'banner/clock.jpg'}
+                                    title="Mountains banner"
+                                />
+                                <div>
+                                    <Typography type="title" className={classes.header}>  Hours </Typography>
+                                </div>
+                                <div  className={classes.hoursLarge}>
                                     <Grid container spacing={0}>
                                         <Grid item xs={6}>
                                             <Typography type="title1" className={classes.flex}> Monday </Typography>
