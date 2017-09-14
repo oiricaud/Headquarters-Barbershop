@@ -35,10 +35,10 @@ const styles = theme => ({
     hours:{
         paddingTop: 8,
         paddingBottom: 16,
-        marginTop: theme.spacing.unit * 6,
-        marginBottom: theme.spacing.unit * 6,
-        marginLeft: theme.spacing.unit * 6,
-        marginRight: theme.spacing.unit * 6,
+        marginTop: theme.spacing.unit * 3,
+        marginBottom: theme.spacing.unit * 3,
+        marginLeft: theme.spacing.unit * 3,
+        marginRight: theme.spacing.unit * 3,
     },
 
     flex: {
