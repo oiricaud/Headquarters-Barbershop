@@ -7,8 +7,6 @@ This is my first React Application. If you are trying to clone this, merely unzi
 
     cd unzippedFileDirectory
 
-    cd barbershop/src
-
     npm start
     
 

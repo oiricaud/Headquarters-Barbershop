@@ -82,44 +82,72 @@ class SideBarItem extends Component {
                         title="Contemplative Reptile"
                     />
                 </Card>
-                <ListItem button>
-                    <ListItemIcon>
-                        <HomeIcon />
-                    </ListItemIcon>
-                    <div>
-                        <NavLink activeClassName='active' exact to='/' >Home</NavLink>
-                    </div>
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon>
-                        <BusinessIcon />
-                    </ListItemIcon>
-                    <NavLink activeClassName='active' to='hours'>Hours</NavLink>
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon>
-                        <PhoneIcon />
-                    </ListItemIcon>
-                    <NavLink activeClassName='active' to='call'>Call</NavLink>
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon>
-                        <StarIcon />
-                    </ListItemIcon>
-                    <NavLink activeClassName='active' to='reviews'>Reviews</NavLink>
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon>
-                        <SendIcon />
-                    </ListItemIcon>
-                    <NavLink activeClassName='active' to='mail'>Mail</NavLink>
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon>
-                        <DirectionsIcon />
-                    </ListItemIcon>
-                    <NavLink activeClassName='active' to='directions'>Directions</NavLink>
-                </ListItem>
+                <NavLink activeClassName='active' exact to='/' >
+                    <ListItem button>
+                        <ListItemIcon>
+                            <HomeIcon />
+                        </ListItemIcon>
+                        <div className={classes.sidebar}>
+                           Home
+                        </div>
+                    </ListItem>
+                </NavLink>
+
+                <NavLink activeClassName='active' exact to='hours'>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <BusinessIcon />
+                        </ListItemIcon>
+                        <div className={classes.sidebar}>
+                            Hours
+                        </div>
+                    </ListItem>
+                </NavLink>
+
+                <NavLink activeClassName='active' exact to='call' >
+                    <ListItem button>
+                        <ListItemIcon>
+                            <PhoneIcon />
+                        </ListItemIcon>
+                        <div className={classes.sidebar}>
+                            Call
+                        </div>
+                    </ListItem>
+                </NavLink>
+
+                <NavLink activeClassName='active' exact to='reviews' >
+                    <ListItem button>
+                        <ListItemIcon>
+                            <StarIcon />
+                        </ListItemIcon>
+                        <div className={classes.sidebar}>
+                            Reviews
+                        </div>
+                    </ListItem>
+                </NavLink>
+
+                <NavLink activeClassName='active' exact to='mail' >
+                    <ListItem button>
+                        <ListItemIcon>
+                            <DirectionsIcon />
+                        </ListItemIcon>
+                        <div className={classes.sidebar}>
+                            Mail
+                        </div>
+                    </ListItem>
+                </NavLink>
+
+                <NavLink activeClassName='active' exact to='directions' >
+                    <ListItem button>
+                        <ListItemIcon>
+                            <DirectionsIcon />
+                        </ListItemIcon>
+                        <div className={classes.sidebar}>
+                            Directions
+                        </div>
+                    </ListItem>
+                </NavLink>
+
             </div>
         );
 
