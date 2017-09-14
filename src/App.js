@@ -5,6 +5,7 @@ import {BrowserRouter, Route } from 'react-router-dom'
 import { withStyles } from 'material-ui/styles';
 import HomeView from './views/home.jsx';
 import HoursView from './views/hours.jsx';
+import DirectionsView from './views/directions.jsx';
 import MySideBar from './components/sidebar.jsx';
 import MyFooter from './components/footer.jsx';
 
@@ -36,7 +37,7 @@ class App extends Component {
                 <Route
                     exact
                     path='/call'
-                    render={() => <h1>  Call </h1>}
+                    render={() => <h1> Call </h1> }
                 />
                 <Route
                     exact
@@ -51,7 +52,7 @@ class App extends Component {
                 <Route
                     exact
                     path='/directions'
-                    render={() => <h1> Directions </h1>}
+                    render={() => <DirectionsView> </DirectionsView>}
                 />
                 <MyFooter>
                 </MyFooter>
