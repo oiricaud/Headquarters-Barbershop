@@ -8,6 +8,8 @@ import HoursView from './views/hours.jsx';
 import DirectionsView from './views/directions.jsx';
 import MySideBar from './components/sidebar.jsx';
 import MyFooter from './components/footer.jsx';
+import Hat from "react-hat";
+import Helmet from 'react-helmet'
 
 const styles = theme => ({
     root: {
@@ -26,6 +28,16 @@ class App extends Component {
         return (
             <BrowserRouter>
             <div className={classes.root}>
+                <Helmet
+                    meta={[
+                        {"property": "og:type", "content": "video.other"},
+                        {"property": "og:image", "content": "https://www.w3schools.com/css/trolltunga.jpg"},
+                        {"property": "og:title", "content": "My Title"},
+                        {"property": "og:url", "content": "https://www.afnity.com/video/155"},
+                        {"property": "og:description", "content": "some discription of the shared    content"}
+                    ]}
+                />
+
                 <MySideBar>
                 </MySideBar>
                 <Route exact path='/' render={() => <HomeView> </HomeView>} />
@@ -37,7 +49,7 @@ class App extends Component {
                 <Route
                     exact
                     path='/call'
-                    render={() => <h1> Call </h1> }
+                    render={() => <h1> Call </h1>}
                 />
                 <Route
                     exact
