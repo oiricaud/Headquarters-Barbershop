@@ -126,17 +126,6 @@ class SideBarItem extends Component {
                     </ListItem>
                 </NavLink>
 
-                <NavLink activeClassName='active' exact to='mail' >
-                    <ListItem button>
-                        <ListItemIcon>
-                            <DirectionsIcon />
-                        </ListItemIcon>
-                        <div className={classes.sidebar}>
-                            Mail
-                        </div>
-                    </ListItem>
-                </NavLink>
-
                 <NavLink activeClassName='active' exact to='directions' >
                     <ListItem button>
                         <ListItemIcon>
