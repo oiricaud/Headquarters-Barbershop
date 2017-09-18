@@ -28,16 +28,6 @@ class App extends Component {
         return (
             <BrowserRouter>
             <div className={classes.root}>
-                <Helmet
-                    meta={[
-                        {"property": "og:type", "content": "video.other"},
-                        {"property": "og:image", "content": "https://www.w3schools.com/css/trolltunga.jpg"},
-                        {"property": "og:title", "content": "My Title"},
-                        {"property": "og:url", "content": "https://www.afnity.com/video/155"},
-                        {"property": "og:description", "content": "some discription of the shared    content"}
-                    ]}
-                />
-
                 <MySideBar>
                 </MySideBar>
                 <Route exact path='/' render={() => <HomeView> </HomeView>} />
