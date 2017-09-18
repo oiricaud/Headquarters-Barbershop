@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import {CardActions, CardContent, CardMedia} from "../../node_modules/material-ui/Card/index";
-import Card from "../../node_modules/material-ui/Card/Card";
 import {Button, Grid, Paper, Typography} from "../../node_modules/material-ui/index";
 // using ES modules
 import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';

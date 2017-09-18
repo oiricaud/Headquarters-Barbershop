@@ -5,11 +5,13 @@ import {BrowserRouter, Route } from 'react-router-dom'
 import { withStyles } from 'material-ui/styles';
 import HomeView from './views/home.jsx';
 import HoursView from './views/hours.jsx';
+import CallView from './views/call.jsx';
 import DirectionsView from './views/directions.jsx';
 import MySideBar from './components/sidebar.jsx';
 import MyFooter from './components/footer.jsx';
-import Hat from "react-hat";
-import Helmet from 'react-helmet'
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-106748981-1');
+
 
 const styles = theme => ({
     root: {
@@ -23,6 +25,7 @@ const styles = theme => ({
 });
 
 class App extends Component {
+
     render() {
         const classes = this.props.classes;
         return (
@@ -39,7 +42,7 @@ class App extends Component {
                 <Route
                     exact
                     path='/call'
-                    render={() => <h1> Call </h1>}
+                    render={() => <CallView> </CallView>}
                 />
                 <Route
                     exact

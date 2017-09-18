@@ -8,9 +8,6 @@ import Typography from 'material-ui/Typography';
 import MyLargeTiles from '../components/large-tiles.jsx';
 import MySmallTiles from '../components/small-tiles.jsx';
 
-// using ES modules
-import Media from 'react-media'
-
 // using CommonJS modules
 var MediaReact = require('react-media')
 const styles = theme => ({

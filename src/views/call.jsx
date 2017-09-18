@@ -26,7 +26,7 @@ const styles = theme => ({
         marginTop:7,
     },
     paperSmall: theme.mixins.gutters({
-        backgroundColor: 'darkslategray',
+        backgroundColor: 'darksalmon',
         paddingTop: 8,
         paddingBottom: 16,
         marginTop: theme.spacing.unit * 2,
@@ -41,7 +41,7 @@ const styles = theme => ({
     },
 
     paperLarge: theme.mixins.gutters({
-        backgroundColor: 'darkslategray',
+        backgroundColor: 'darksalmon',
         paddingTop: 8,
         paddingBottom: 16,
         marginTop: theme.spacing.unit * 10,
@@ -71,7 +71,7 @@ const styles = theme => ({
     }
 });
 
-class Hours extends Component {
+class Call extends Component {
     render() {
         const classes = this.props.classes;
         return (
@@ -82,7 +82,7 @@ class Hours extends Component {
                             <Paper className={classes.paperSmall} elevation={10}>
                                 <CardMedia
                                     className={classes.media}
-                                    image={process.env.PUBLIC_URL + 'banner/clock.jpg'}
+                                    image={process.env.PUBLIC_URL + 'banner/phone.png'}
                                     title="Mountains banner"
                                 />
                                 <div>
@@ -118,11 +118,11 @@ class Hours extends Component {
                             <Paper className={classes.paperLarge} elevation={10}>
                                 <CardMedia
                                     className={classes.media}
-                                    image={process.env.PUBLIC_URL + 'banner/clock.jpg'}
+                                    image={process.env.PUBLIC_URL + 'banner/phone.png'}
                                     title="Mountains banner"
                                 />
                                 <div>
-                                    <Typography type="title" className={classes.header}>  Hours </Typography>
+                                    <Typography type="title" className={classes.header}>  Phone: 915-999-6044 </Typography>
                                 </div>
                                 <div  className={classes.hoursLarge}>
                                     <Grid container spacing={0}>
@@ -136,13 +136,13 @@ class Hours extends Component {
                                             <Typography type="title1" className={classes.flex}> Sunday </Typography>
                                         </Grid>
                                         <Grid item xs={6}>
-                                            <Typography type="title1" className={classes.flex}> 10am - 7pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> 10am - 7pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> 10am - 7pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> 10am - 7pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> 10am - 7pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> 10am - 5pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> Closed </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
                                         </Grid>
                                     </Grid>
                                 </div>
@@ -156,8 +156,8 @@ class Hours extends Component {
 }
 
 
-Hours.propTypes = {
+Call.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Hours);
+export default withStyles(styles)(Call);
