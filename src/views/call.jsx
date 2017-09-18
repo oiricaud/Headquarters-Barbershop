@@ -26,7 +26,7 @@ const styles = theme => ({
         marginTop:7,
     },
     paperSmall: theme.mixins.gutters({
-        backgroundColor: 'darksalmon',
+        backgroundColor: 'cornflowerblue',
         paddingTop: 8,
         paddingBottom: 16,
         marginTop: theme.spacing.unit * 2,
@@ -41,7 +41,7 @@ const styles = theme => ({
     },
 
     paperLarge: theme.mixins.gutters({
-        backgroundColor: 'darksalmon',
+        backgroundColor: 'cornflowerblue',
         paddingTop: 8,
         paddingBottom: 16,
         marginTop: theme.spacing.unit * 10,
@@ -67,7 +67,8 @@ const styles = theme => ({
     header:{
         fontWeight: 300,
         fontSize: 30,
-        color: '#FAFAFA'
+        color: '#FAFAFA',
+
     }
 });
 
@@ -88,28 +89,6 @@ class Call extends Component {
                                 <div>
                                     <Typography type="title" className={classes.header}>  Home </Typography>
                                 </div>
-                                <div  className={classes.hoursSmall}>
-                                    <Grid container spacing={0}>
-                                        <Grid item xs={6}>
-                                            <Typography type="title1" className={classes.flex}> Monday </Typography>
-                                            <Typography type="title1" className={classes.flex}> Tuesday </Typography>
-                                            <Typography type="title1" className={classes.flex}> Wednesday </Typography>
-                                            <Typography type="title1" className={classes.flex}> Thursday </Typography>
-                                            <Typography type="title1" className={classes.flex}> Friday </Typography>
-                                            <Typography type="title1" className={classes.flex}> Saturday </Typography>
-                                            <Typography type="title1" className={classes.flex}> Sunday </Typography>
-                                        </Grid>
-                                        <Grid item xs={6}>
-                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
-                                        </Grid>
-                                    </Grid>
-                                </div>
                             </Paper>
                         </div>
 
@@ -123,8 +102,10 @@ class Call extends Component {
                                 />
                                 <div>
                                     <Typography type="title" className={classes.header}>  Phone: 915-999-6044 </Typography>
+
                                 </div>
                                 <div  className={classes.hoursLarge}>
+                                    <Typography type="title" className={classes.header}>  Hours </Typography>
                                     <Grid container spacing={0}>
                                         <Grid item xs={6}>
                                             <Typography type="title1" className={classes.flex}> Monday </Typography>
@@ -136,13 +117,13 @@ class Call extends Component {
                                             <Typography type="title1" className={classes.flex}> Sunday </Typography>
                                         </Grid>
                                         <Grid item xs={6}>
-                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
-                                            <Typography type="title1" className={classes.flex}> 10am - 6pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 7pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 7pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 7pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 7pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 7pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> 10am - 5pm </Typography>
+                                            <Typography type="title1" className={classes.flex}> Closed </Typography>
                                         </Grid>
                                     </Grid>
                                 </div>

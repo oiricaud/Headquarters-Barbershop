@@ -32,7 +32,7 @@ const styles = theme => ({
         marginTop:7,
     },
     paperSmall: theme.mixins.gutters({
-        backgroundColor: 'darkslategray',
+        backgroundColor: 'indianred',
         paddingTop: 8,
         paddingBottom: 16,
         marginTop: theme.spacing.unit * 2,
@@ -47,7 +47,7 @@ const styles = theme => ({
     },
 
     paperLarge: theme.mixins.gutters({
-        backgroundColor: 'darkslategray',
+        backgroundColor: 'indianred',
         paddingTop: 8,
         paddingBottom: 16,
         marginTop: theme.spacing.unit * 10,
