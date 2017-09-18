@@ -15,3 +15,7 @@ If you encounter command not found, you most likely need to install npm.
 just 
 
     npm install 
+
+View the site here:
+
+https://headquartershairsalon.netlify.com
